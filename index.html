@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameCenter</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+    <header>
+        <div onclick="slowScroll('#top')">
+            <img src="img/logo/ninja.gif" alt="Ninja Logo" class="logo">
+        </div>
+        <div id="nav">
+            <a href="about.html" title="about">About Us</a>
+            <a href="#" title="about" onclick="slowScroll('#feedback')">Feedback</a>
+            <a href="#" title="about" onclick="slowScroll('#category')">Categories</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="top">
+            <h2>Welcome To The Gaming Info Website</h2>
+            <h3>Let's Play On</h3>
+            <audio src="voice.mp3" class="audio" controls></audio>
+            <img src="img/logo/itsuki.gif" alt="Itsuki Logo">
+        </div>
+
+        <div class="content__bg">
+            <div class="content">
+                <div class="title">Some interesting facts about gaming...</div>
+                <div class="info">
+                    <img src="img/main/infographic.png" alt="Gaming Infographic">
+                </div>
+            </div>
+        </div>
+
+        <div id="category">
+            <h2>Categories</h2>
+            <h4>Сlick on a category to learn more</h4>
+            <div class="category-image">
+                <div class="img">
+                    <a href="action.html">
+                        <img src="img/categories/action-adventure/godofwar.jpg" alt="God of War Image">
+                        <span>Action-Adventure</span>
+                    </a>
+                </div>
+                <div class="img">
+                    <a href="rpg.html">
+                        <img src="img/categories/rpg/overwatch.jpg" alt="Overwatch Image">
+                        <span>Role-Playing</span>
+                    </a>
+                </div>
+                <div class="img">
+                    <a href="strategy.html">
+                        <img src="img/categories/strategy/civilization.jpg" alt="Civilization Image">
+                        <span>Strategy</span>
+                    </a>
+                </div>
+                <div class="img">
+                    <a href="simulation.html">
+                        <img src="img/categories/simulation/flight.jpg" alt="MSFS Image">
+                        <span>Simulation</span>
+                    </a>
+                </div>
+                <div class="img">
+                    <a href="sports.html">
+                        <img src="img/categories/sports/fifa.jpg" alt="FIFA Image">
+                        <span>Sports</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedback">
+            <center>
+                <h5>Feedback</h5>
+            </center>
+            <form id="form_input" method="POST" action="main.php">
+                <label for="name">Name <span>*</span></label><br>
+                <input type="text" placeholder="Enter your name" name="name" id="name" required><br>
+                <label for="email">Email <span>*</span></label><br>
+                <input type="email" placeholder="Enter your email" name="email" id="email" required><br>
+                <label for="gender">Gender <span>*</span></label><br>
+                <span>Male</span>
+                <input type="radio" value="Male" name="gender" id="male" required></input>
+                <span>Female</span>
+                <input type="radio" value="Female" name="gender" id="female" required></input><br>
+                <label for="type">Type of feedback<span>*</span></label><br>
+                <select name="type" id="type" required>
+                    <option value="">Please choose</option>
+                    <option value="Suggestion">Suggestion</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Enquiry">Enquiry</option>
+                </select><br><br>
+                <label for="message">Comment <span>*</span></label><br>
+                <textarea placeholder="Write your comment" name="message" id="message" required></textarea><br>
+                <div class="btn__block">
+                    <button type="submit" class="btn"> Send</button>
+                    <button type="button" class="btn2" onclick="myFunction()"> Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer-footer">
+		<div class="footer-left">
+			<h3>GameCenter</h3>
+			<p class="footer-links">
+				<a href="index.html">Home</a>
+				·
+				<a href="index.html">Categories</a>
+				·
+				<a href="index.html">Feedback</a>
+				·
+				<a href="about.html">About Us</a>
+			</p>
+			<p class="footer-copyright">Made in Turkmneistan © 2021</p>
+			<div class="footer-icons">
+				<a href="https://t.me/freki_rd"><i class="fa fa-telegram"></i></a>
+				<a href="https://www.instagram.com/yusup_rejepov/?hl=ru"><i class="fa fa-instagram"></i></a>
+				<a href="https://github.com/iamyazyyev/gamecenter"><i class="fa fa-github"></i></a>
+			</div>
+		</div>
+		<div class="footer-right">
+			<p>Email Us</p>
+			<form action="mailto:yusuprejepov2002@gmail.com" method="GET">
+				<input type="text" name="email" placeholder="Email">
+				<textarea name="message" placeholder="Message"></textarea>
+				<button>Send</button>
+			</form>
+		</div>
+	</footer>
+
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function () {
+            if ($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class", "fixed");
+        });
+    </script>
+</body>
+
+</html>
